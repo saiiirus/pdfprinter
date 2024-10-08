@@ -1,0 +1,38 @@
+/* src/PrintButton.css */
+@media print {
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  #printable-section {
+    width: 80mm; /* Adjust for your receipt paper width */
+    margin: 0 auto;
+    padding: 5mm;
+    border: 1px solid #000;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  /* Hide everything else */
+  @page {
+    size: auto;
+    margin: 0;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  #printable-section,
+  #printable-section * {
+    visibility: visible;
+  }
+
+  #printable-section {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}

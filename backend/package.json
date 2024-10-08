@@ -1,0 +1,25 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "frontend": "cd ../ && npm start",
+    "backend": "node server.js",
+    "start": "concurrently \"npm run frontend\" \"node server.js\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "concurrently": "^9.0.0",
+    "cors": "^2.8.5",
+    "escpos": "^3.0.0-alpha.6",
+    "escpos-usb": "^3.0.0-alpha.4",
+    "express": "^4.19.2",
+    "pdf-to-printer": "^5.6.0",
+    "pdfkit": "^0.15.0",
+    "printer": "^0.4.0"
+  }
+}

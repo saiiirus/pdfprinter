@@ -6,7 +6,7 @@ import axios from "axios";
 const PrintButton = () => {
   const handlePrint = () => {
     axios
-      .post("http://180.232.37.26:3001/print-receipt")
+      .post("http://localhost:3001/print-receipt")
       .then(() => {
         console.log("Print job started");
       })

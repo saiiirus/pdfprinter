@@ -5,10 +5,19 @@ const PDFDocument = require("pdfkit");
 const fs = require("fs");
 const path = require("path");
 const pdfPrinter = require("pdf-to-printer");
+const cors = require("cors");
 
 app.use(express.json());
 
+app.use(
+  cors({
+    origin: "http://180.232.37.26:3000",
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
+
 app.post("/print-receipt", (req, res) => {
+  console.log("Received request to print receipt");
   const filePath = path.join(__dirname, "receipt.pdf");
 
   // Create a PDF document
@@ -57,5 +66,5 @@ app.post("/print-receipt", (req, res) => {
 });
 
 app.listen(3001, () => {
-  console.log("Server running on http://localhost:3001");
+  console.log("Server running on http://180.232.37.26:3001");
 });
